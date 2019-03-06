@@ -53,5 +53,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
   # mailer setteings
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'a8cd08b168944f30ac5ffcbc2c605b52.vfs.cloud9.ap-southeast-1.amazonaws.com', protocol: 'https' }
+
+  config.action_mailer.delivery_method = :letter_opener_web
 end
