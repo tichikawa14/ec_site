@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EcSite</title>
+    <title>ECSite</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,9 +9,29 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
-    <%= yield %>
+    <header>
+      <div class="container">
+        <%= link_to "ECサイト", '#', id: "logo" %>
+        <nav>
+          
+        </nav>
+      </div>
+      <nav class="navbar fixed-top navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+        </a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item"><%= link_to "Help",   '#', class: "nav-link"  %></li>
+          <li class="nav-item"><%= link_to "sign up", '#', class: "nav-link" %></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      
+      <%= yield %>
+    </div>
   </body>
 </html>
