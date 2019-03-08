@@ -12,6 +12,7 @@ gem 'jbuilder',     '2.7.0'
 gem 'devise'
 gem 'faker'
 gem 'active_decorator'
+gem 'haml-rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
@@ -25,7 +26,6 @@ group :development do
   gem 'spring-watcher-listen', '2.0.1'
   gem 'letter_opener_web'
   gem 'annotate'
-  gem 'haml-rails'
 end
 
 group :test do
