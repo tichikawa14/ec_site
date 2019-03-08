@@ -25,6 +25,7 @@ group :development do
   gem 'spring-watcher-listen', '2.0.1'
   gem 'letter_opener_web'
   gem 'annotate'
+  gem 'haml-rails'
 end
 
 group :test do
