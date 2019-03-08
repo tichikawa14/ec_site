@@ -13,6 +13,7 @@ gem 'devise'
 gem 'faker'
 gem 'active_decorator'
 gem 'haml-rails',   "~> 1.0"
+gem 'simple_form'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
