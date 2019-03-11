@@ -1,8 +1,17 @@
-%h1 Products#new
-%p Find me in app/views/products/new.html.haml
+%h1 商品追加
 
 = simple_form_for @product do |f|
   = f.input :name
   = f.input :description
   = f.input :price
+  = f.input :image, as: :file, accept: 'image/jpeg,image/jpg,image/gif,image/png' 
   = f.button :submit, class: 'btn-primary'
+  
+  
+:javascript
+  $('#micropost_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });

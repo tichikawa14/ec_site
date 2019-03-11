@@ -14,6 +14,9 @@ gem 'faker'
 gem 'active_decorator'
 gem 'haml-rails',   "~> 1.0"
 gem 'simple_form'
+gem 'carrierwave', '~> 1.0'
+gem "fog-aws"
+gem "mini_magick"
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
