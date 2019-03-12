@@ -5,8 +5,9 @@
     .row.col.mb-5
       .card{:style => "width: 18rem;"}
         = image_tag(product.image.to_s, :alt => "カードの画像", :class => "card-img-top") if product.image? 
-
         .card-body
           %h5.card-title= product.name
           %p.card-text= product.description
           %p.card-text= product.num_to_currency
+
+          = link_to "詳細", product_path(product), :class => "btn btn-primary stretched-link"

@@ -124,6 +124,10 @@ GEM
       haml (>= 4.0.6, < 6.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
+    hashid-rails (1.2.2)
+      activerecord (>= 4.0)
+      hashids (~> 1.0)
+    hashids (1.0.5)
     html2haml (2.2.0)
       erubis (~> 2.7.0)
       haml (>= 4.0, < 6)
@@ -303,6 +307,7 @@ DEPENDENCIES
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
   haml-rails (~> 1.0)
+  hashid-rails (~> 1.0)
   jbuilder (= 2.7.0)
   jquery-rails
   letter_opener_web

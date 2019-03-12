@@ -13,7 +13,6 @@
 
 class Product < ApplicationRecord
     validate :image_size
-    
     mount_uploader :image, ImageUploader
     
     private

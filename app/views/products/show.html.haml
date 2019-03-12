@@ -1,0 +1,11 @@
+
+.text-center
+  %h1商品詳細
+  = image_tag(@product.image, :class => "img-fluid img-thumbnail rounded", :size => "100%*100%")
+
+.border.border-dark.p-3.m-3
+  %h3=@product.name
+  %P=@product.description
+  %P=@product.num_to_currency
+
+%a.btn.btn-success.m-3.mx-auto.d-block{:href => "", :role => "button", :style => "width:90%"} 買い物かごに入れる
