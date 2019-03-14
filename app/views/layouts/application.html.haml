@@ -9,15 +9,19 @@
   %body
     %header
       .container
-        = link_to "ECサイト", '#', id: "logo"
         %nav
-      %nav.navbar.fixed-top.navbar-light.bg-light
-        %a.navbar-brand{:href => "#"}
-          %img{:alt => "", :height => "30", :src => "", :width => "30"}/
-        %ul.nav.justify-content-end
-          %li.nav-item= link_to "Help",   '#', class: "nav-link"
-          %li.nav-item= link_to "sign up", '#', class: "nav-link"
-    .container
-      %p.notice= notice
-      %p.alert= alert
-      = yield
+          %ul.navbar.fixed-top.navbar-light.bg-light
+            %a.navbar-brand{:href => "#"}
+              %img{:alt => "", :height => "30", :src => "", :width => "30"}/
+            %ul.nav.justify-content-end
+              - if user_signed_in?
+                %li.nav-item= link_to "ログアウト", destroy_user_session_path, method: "delete", class: "nav-link"
+              - else
+                %li.nav-item= link_to "ログイン", new_user_session_path, class: "nav-link"
+                %li.nav-item= link_to "登録", new_user_registration_path, class: "nav-link"
+      .container
+        - flash.each do |message_type, message|
+          %div{class: "alert alert-#{message_type}"}= message
+        // %p.notice= notice
+        // %p.alert= alert
+        = yield

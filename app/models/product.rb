@@ -16,7 +16,7 @@ class Product < ApplicationRecord
     mount_uploader :image, ImageUploader
     
     private
-
+    
     # アップロードされた画像のサイズをバリデーションする
     def image_size
       if image.size > 5.megabytes
