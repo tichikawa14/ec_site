@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190314023507) do
+ActiveRecord::Schema.define(version: 20190315023627) do
 
   create_table "basket_products", force: :cascade do |t|
-    t.integer "quantity"
+    t.integer "quantity", default: 0
     t.integer "product_id"
     t.integer "basket_id"
     t.datetime "created_at", null: false

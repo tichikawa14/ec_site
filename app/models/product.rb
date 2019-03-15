@@ -12,6 +12,7 @@
 #
 
 class Product < ApplicationRecord
+    belongs_to :basket_product, optional: true
     validate :image_size
     mount_uploader :image, ImageUploader
     

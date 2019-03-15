@@ -4,11 +4,14 @@ class ApplicationController < ActionController::Base
   helper_method :current_basket
   
   def current_basket
-    if session[:basket_id]
-      @basket = Basket.find(session[:basket_id])
-    else
-      @basket = Basket.create
-      session[:basket_id] = @basket.id
+    if user_signed_in?
+      if session[:basket_id]
+        @basket = Basket.find(session[:basket_id])
+      else
+        @basket = current_user.create_basket
+        session[:basket_id] = @basket.id
+        @basket
+      end
     end
   end
 end

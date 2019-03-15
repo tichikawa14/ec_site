@@ -11,4 +11,5 @@
 class Basket < ApplicationRecord
   belongs_to :user
   has_many :basket_products
+  has_many :Products, through: :basket_products
 end

@@ -1,0 +1,9 @@
+%h1 カート一覧
+
+- @products.each do |product|
+  .border.border-dark.p-3.m-3 
+    %h5= product.name
+    %p= product.description
+    %p= product.num_to_currency
+    
+    = button_to "削除", "/baskets/#{product.id}", method: :delete, class: "btn btn-danger"

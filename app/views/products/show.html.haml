@@ -8,4 +8,4 @@
   %P=@product.description
   %P=@product.num_to_currency
 
-%a.btn.btn-success.m-3.mx-auto.d-block{:href => "", :role => "button", :style => "width:90%"} 買い物かごに入れる
+= button_to  "買い物かごに入れる", "/baskets", class: 'btn btn-success m-3 mx-auto d-block', :method => "POST", params: { product_id: @product.id }, :style => "width:90%"
