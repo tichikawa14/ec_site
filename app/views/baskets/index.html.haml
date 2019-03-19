@@ -1,9 +1,27 @@
-%h1 カート一覧
+%h1 買い物かごの中身
 
+- amount = 0
 - @products.each do |product|
   .border.border-dark.p-3.m-3 
     %h5= product.name
     %p= product.description
     %p= product.num_to_currency
-    
+    <!- 合計を計算 ->
+    - amount += product.price
     = button_to "削除", "/baskets/#{product.id}", method: :delete, class: "btn btn-danger"
+
+= form_tag("/payment") do
+  %article
+    - if flash[:error].present?
+      #error_explanation
+        %p= flash[:error]
+    %label.amount
+      %span 合計 #{amount} 円
+  %script.stripe-button{:src => "https://checkout.stripe.com/checkout.js",
+                        "data-amount" => amount,
+                        "data-description" => "payment",
+                        "data-key" => "#{Rails.configuration.stripe[:stripe_api_key]}",
+                        "data-locale" => "auto",
+                        "data-currency" => "jpy",
+                        }
+
